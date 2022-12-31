@@ -1,0 +1,20 @@
+### comoptUse.cmake.in ---
+##
+######################################################################
+##
+### Commentary:
+##
+######################################################################
+
+if(NOT comopt_USE_FILE_INCLUDED)
+
+   set(comopt_USE_FILE_INCLUDED 1)
+
+   include_directories(${comopt_INCLUDE_DIR})
+
+   link_directories(${comopt_LIBRARY_DIR})
+
+
+   set(comopt_DEPENDENCIES ${comopt_DEPENDENCIES})
+
+endif(NOT comopt_USE_FILE_INCLUDED)
