@@ -1,6 +1,6 @@
 #!/bin/bash
 # Number of processors used for compilation
-NBPROCS=8
+NBPROCS=1
 
 if [ "$1" == "clean" ]; then
   # Clean the build folder
