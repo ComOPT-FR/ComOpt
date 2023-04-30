@@ -1,13 +1,3 @@
-// copyright [2015] Daniel Pino Muñoz
-
-// tensorialTools.h
-
-/* This class provides mayny tensorial useful functions
-   Daniel Pino Muñoz
-   daniel.pino_munoz@mines-paristech.fr
-   13 August 2015
- */
-
 #ifndef SRC_BASICS_TENSORIALTOOLS_H_
 #define SRC_BASICS_TENSORIALTOOLS_H_
 

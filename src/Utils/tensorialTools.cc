@@ -1,18 +1,3 @@
-// copyright [2015] Daniel Pino Muñoz
-
-// tensorialTools.cc
-
-/* This class provides all the common functionalities for different types
- * tensorialToolss
- * - FOTensor: Fourth order tensor 3x3x3x3
- * - FOVoigt: Fourth order tensor in voigt notation 6x6
- * - SOTensor: Second order tensor 3x3
- * - SOVoigt: Second order tensor in voigt notation 6x1
- * Daniel Pino Muñoz
- * daniel.pino_munoz@mines-paristech.fr
- * 13 August 2015
- */
-
 #include "tensorialTools.h"
 #include <vector>
 #include <math.h>
@@ -213,8 +198,6 @@ void tensorialTools::SOTensor2Voigt(const MatrixXd* tensor, VectorXd* voigt,
 // Transform a second order tensor from voigt notation to classic notation
 void tensorialTools::SOVoigt2Tensor(const VectorXd* voigt, MatrixXd* tensor,
                                     bool strain) {
-    // TODO(daniel): Make it work in 2D
-    // Should work in 2D out of the box. Entirely relies on myClassicToVoigt
   for (int i = 0; i < dim; ++i)
     for (int j = 0; j < dim; ++j)
       (*tensor)(i, j) = (*voigt)(myClassicToVoigt[i][j]) /
@@ -224,8 +207,6 @@ void tensorialTools::SOVoigt2Tensor(const VectorXd* voigt, MatrixXd* tensor,
 // Transform a forth order tensor from voigt notation to classic notation
 void tensorialTools::FOVoigt2Tensor(const MatrixXd* FOVoigt,
 				    double* tensor) {
-  // TODO(daniel): Make it work in 2D
-  // Should work in 2D out of the box. Entirely relies on myClassicToVoigt
   int dim3 = dim*dim*dim;
   int dim2 = dim*dim;
   for (int i = 0; i < dim; ++i) {
@@ -243,8 +224,6 @@ void tensorialTools::FOVoigt2Tensor(const MatrixXd* FOVoigt,
 // Transform a forth order tensor from classic notation to voigt notation
 void tensorialTools::FOTensor2Voigt(const double * tensor,
 				    MatrixXd* FOVoigt) {
-  // TODO(daniel): Make it work in 2D
-  // Should work in 2D out of the box. Entirely relies on myClassicToVoigt
   int dim3 = dim*dim*dim;
   int dim2 = dim*dim;
   for (int i = 0; i < voigtSize; ++i) {
@@ -315,7 +294,6 @@ tensorDoubleDotProduct(const MatrixXd* tensorA,
 // of methals using polycrystal plasticity, CMAME, 165, 1998, 1-2:
 // exp(Aij) = deltaij = sin(w)/w Aij (1-cos(w))/(w*w) Aik Akj
 void tensorialTools::exponentialMap(const MatrixXd* tensorA, MatrixXd* exp) {
-  // TODO(daniel): Make it work in 2D
   if (dim != 3) {
     std::cerr << "MPCP::tensorialTools::exponentialMap not implemented for"
 	      << "dim = " << dim << "\n";

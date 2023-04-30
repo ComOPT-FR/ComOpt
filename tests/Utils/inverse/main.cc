@@ -6,7 +6,7 @@
 #include <vector>
 #include <cstdlib>
 #include <random>
-#include "basics/tensorialTools.h"
+#include "Utils/tensorialTools.h"
 #include <ctime>
 #include <iomanip>
 

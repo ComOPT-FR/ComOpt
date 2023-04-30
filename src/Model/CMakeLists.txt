@@ -6,7 +6,7 @@
 ##
 ######################################################################
 
-project(basics)
+project(Model)
 
 ######################################################################
 ## Sources
@@ -28,8 +28,8 @@ add_library(${PROJECT_NAME} OBJECT
 
 set_property(TARGET ${PROJECT_NAME} PROPERTY POSITION_INDEPENDENT_CODE 1)
 
-if(NOT "${mpcp_DEPENDENCIES_3RDPARTY}" STREQUAL "")
-  add_dependencies(${PROJECT_NAME} ${mpcp_DEPENDENCIES_3RDPARTY})
+if(NOT "${comopt_DEPENDENCIES_3RDPARTY}" STREQUAL "")
+  add_dependencies(${PROJECT_NAME} ${comopt_DEPENDENCIES_3RDPARTY})
 endif()
 
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER src)
@@ -62,3 +62,4 @@ foreach(header ${${PROJECT_NAME}_HEADERS})
 endforeach(header)
 
 install(FILES ${${PROJECT_NAME}_HEADERS} DESTINATION include/${PROJECT_NAME})
+
