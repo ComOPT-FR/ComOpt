@@ -1,0 +1,47 @@
+# Compilation
+build*
+!build.bat
+!build.sh
+
+# CMake compilation files
+CMakeFiles
+CMakeCache.txt
+
+# Testing
+Testing*
+
+# MacOS CMake
+*.check_cache
+
+# Emacs
+*~
+\#*\#
+GPATH
+GRTAGS
+GTAGS
+
+# Vim
+*/.vimrc
+.*.sw*
+*/tags
+.ctags
+.gutctags
+
+# Eclipse
+/.project
+/.cproject
+
+# Visual Studio Code
+.vscode
+compile_commands.json
+
+# Miscellaneous
+*.bak
+*_bak
+*.back
+*_back
+*.old
+*_old
+
+
+mostafa/
