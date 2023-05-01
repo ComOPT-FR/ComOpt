@@ -6,14 +6,14 @@
 ##
 ######################################################################
 
-project(Utils)
+project(utils)
 
 ######################################################################
 ## Sources
 ######################################################################
 
 # Sources
-file(GLOB ${PROJECT_NAME}_SOURCES [a-zA-Z0-9]*.cc)
+file(GLOB ${PROJECT_NAME}_SOURCES [a-zA-Z0-9]*.cpp)
 
 # Include
 file(GLOB ${PROJECT_NAME}_HEADERS [a-zA-Z0-9]*.h)
