@@ -16,7 +16,6 @@ set(comopt_DEPENDENCIES_3RDPARTY)
 include(3rdParty)
 
 set(3rdParty_DIR ${CMAKE_BINARY_DIR}/3rdParty)
-
   # Eigen dependency
   set(EIGEN_LIBRARY eigen)
   set(EIGEN_TARGET)
