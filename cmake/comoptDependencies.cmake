@@ -89,7 +89,15 @@ set(3rdParty_DIR ${CMAKE_BINARY_DIR}/3rdParty)
     message(STATUS "${EIGEN_LIBRARY} path : ${3rdParty_DIR}/${EIGEN_LIBRARY}-install")
   endif()
 
-  # Boost dependency
+  ####################################################################
+  ## CCache optimizes compilation
+  ####################################################################
+
+  find_program(CCACHE_FOUND ccache)
+  if(CCACHE_FOUND)
+    set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ccache)
+    set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK ccache)
+  endif(CCACHE_FOUND)
 
 
 ####################################################################
