@@ -1,2 +1,2 @@
-SDP Formulation for Composite Laminates
+SDP Formulation for Composite Laminates.
 
