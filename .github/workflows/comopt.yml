@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Add vcpkg
+        run: git submodule add https://github.com/microsoft/vcpkg
     - uses: actions/checkout@v3
     - name: build
       run: ./build.sh build
