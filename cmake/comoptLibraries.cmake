@@ -12,7 +12,11 @@
 
 set(${PROJECT_NAME}_LIBRARIES 
   ## Add here the list of required libraries 
+  approximations
+  designVariables
+  model
   optimizer
+  section
   utils
 
 )

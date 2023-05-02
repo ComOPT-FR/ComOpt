@@ -2,8 +2,8 @@
 
 REM Clone git project
 set GIT_SSH_COMMAND=ssh -i @SSH_PRIVATE_KEY@ -o StrictHostKeyChecking=no
-"@GIT_EXECUTABLE@" clone "@GIT_URL@" "@GIT_PROJECT_NAME@"
+git clone "@GIT_URL@"  "@GIT_PROJECT_NAME@"
 
 REM Checkout commit version
 cd "@GIT_PROJECT_NAME@"
-"@GIT_EXECUTABLE@" checkout "@GIT_TAG@"
+git checkout "@GIT_TAG@"

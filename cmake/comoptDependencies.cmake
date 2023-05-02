@@ -17,74 +17,6 @@ include(3rdParty)
 
 set(3rdParty_DIR ${CMAKE_BINARY_DIR}/3rdParty)
 
-####################################################################
-## Non linear solvers
-####################################################################
-
-# if(USE_SUNDIALS)
-#   unset(DIR)
-
-#   if(DEFINED ENV{SUNDIALS_DIR})
-#     set(DIR $ENV{SUNDIALS_DIR})
-#   elseif(NOT "${SUNDIALS_DIR}" STREQUAL "")
-#     set(DIR ${SUNDIALS_DIR})
-#   else()
-#     if(WIN32)
-#       if(NOT "${CEMEF_DIR}" STREQUAL "")
-# 	set(DIR ${CEMEF_DIR}/sundials/Visual2015)
-#       endif()
-#     endif()
-#   endif()
-
-#   if("${SUNDIALS_DIR}" STREQUAL "")
-#     set(SUNDIALS_DIR ${DIR} CACHE PATH "Sundials path" FORCE)
-#   else()
-#     set(SUNDIALS_DIR ${DIR} CACHE PATH "Sundials path")
-#   endif()
-
-#   set(SUNDIALS_LIBRARY sundials)
-
-#   if("${SUNDIALS_DIR}" STREQUAL "")
-#     set(SUNDIALS_DIR "" CACHE PATH "Sundials path")
-
-#     check_ssh_key()
-
-#     set(${SUNDIALS_LIBRARY}_GIT_URL "git@git.sophia.mines-paristech.fr:CIMLIB/sundials.git" CACHE STRING "Sundials git url")
-#     set(${SUNDIALS_LIBRARY}_GIT_TAG "update_v3" CACHE STRING "Sundials git tag")
-#     set(${SUNDIALS_LIBRARY}_CMAKE_ARGS "-DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON -DBUILD_CVODE=OFF -DBUILD_CVODES=OFF -DBUILD_IDA=OFF -DBUILD_IDAS=OFF -DBUILD_KINSOL=ON -DBUILD_ARKODE=OFF -DEXAMPLES_ENABLE_C=FALSE -DCMAKE_BUILD_TYPE=Release -DCMAKE_USER_MAKE_RULES_OVERRIDE=${CMAKE_SOURCE_DIR}/cmake/comoptCompilerFlagsOverrides.cmake" CACHE STRING "Sundials cmake arguments")
-
-#     update_3rdparty(${SUNDIALS_LIBRARY} ${3rdParty_DIR})
-
-#     find_3rdparty(${SUNDIALS_LIBRARY} ${SUNDIALS_LIBRARY} "${3rdParty_DIR}/${SUNDIALS_LIBRARY}-build")
-
-#     if(TARGET ${SUNDIALS_LIBRARY}_3RDPARTY)
-#       set(comopt_DEPENDENCIES_3RDPARTY ${comopt_DEPENDENCIES_3RDPARTY} ${SUNDIALS_LIBRARY}_3RDPARTY)
-#     endif()
-
-#     if(${SUNDIALS_LIBRARY}_USE_FILE)
-#       include(${${SUNDIALS_LIBRARY}_USE_FILE})
-#     endif()
-
-#     set(SUNDIALS_DIR "${3rdParty_DIR}/${SUNDIALS_LIBRARY}-install" CACHE PATH "Sundials path" FORCE)
-#   endif()
-
-#   message(STATUS "${SUNDIALS_LIBRARY} path : ${SUNDIALS_DIR}")
-
-#   set(SUNDIALS_INSTALL_DIR ${SUNDIALS_DIR})
-#   set(SUNDIALS_INCLUDE_DIR ${SUNDIALS_DIR}/include)
-#   set(SUNDIALS_LIBRARY_DIR ${SUNDIALS_DIR}/lib)
-#   set(SUNDIALS_BINARY_DIR ${SUNDIALS_DIR}/bin)
-
-#   include_directories(${SUNDIALS_INCLUDE_DIR})
-#   link_directories(${SUNDIALS_LIBRARY_DIR})
-
-#   set(comopt_DEPENDENCIES ${comopt_DEPENDENCIES} sundials_kinsol sundials_nvecserial)
-# endif()
-
-####################################################################
-## Numerical Derivatives
-####################################################################
-
   # Eigen dependency
   set(EIGEN_LIBRARY eigen)
   set(EIGEN_TARGET)
@@ -158,7 +90,15 @@ set(3rdParty_DIR ${CMAKE_BINARY_DIR}/3rdParty)
     message(STATUS "${EIGEN_LIBRARY} path : ${3rdParty_DIR}/${EIGEN_LIBRARY}-install")
   endif()
 
-  # Boost dependency
+  ####################################################################
+  ## CCache optimizes compilation
+  ####################################################################
+
+  find_program(CCACHE_FOUND ccache)
+  if(CCACHE_FOUND)
+    set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ccache)
+    set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK ccache)
+  endif(CCACHE_FOUND)
 
 
 ####################################################################
