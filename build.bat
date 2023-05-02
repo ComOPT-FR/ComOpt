@@ -11,7 +11,7 @@ set CMDLINE=%*
 :: Default values
 set RUN_CMAKE=yes
 set RUN_BUILD=yes
-set GENERATOR=VisualStudio2022
+set GENERATOR=VisualStudio2019
 set BUILD_TYPE=Release
 set LIBRARIES_PATHS_FILENAME=
 set BUILD_DIR_NAME=build
@@ -90,7 +90,10 @@ if "%GENERATOR%" == "Ninja" (
     ) else if "%GENERATOR%" == "VisualStudio2017" (
         set GENERATOR=Visual Studio 15 2017
         set VISUAL_STUDIO_VERSION=17
-	) else if "%GENERATOR%" == "VisualStudio2022" (
+	)else if "%GENERATOR%" == "VisualStudio2019" (
+        set GENERATOR=Visual Studio 16 2019
+        set VISUAL_STUDIO_VERSION=19
+	)else if "%GENERATOR%" == "VisualStudio2022" (
         set GENERATOR=Visual Studio 17 2022
         set VISUAL_STUDIO_VERSION=22
     )else (
