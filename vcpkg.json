@@ -1,0 +1,8 @@
+{
+    "name": "comopt",
+    "version-string": "0.0.1",
+    "dependencies": [
+      "eigen3",
+      "boost"
+    ]
+  }

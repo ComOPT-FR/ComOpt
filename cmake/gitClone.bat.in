@@ -1,9 +1,0 @@
-@echo off
-
-REM Clone git project
-set GIT_SSH_COMMAND=ssh -i @SSH_PRIVATE_KEY@ -o StrictHostKeyChecking=no
-git clone "@GIT_URL@"  "@GIT_PROJECT_NAME@"
-
-REM Checkout commit version
-cd "@GIT_PROJECT_NAME@"
-git checkout "@GIT_TAG@"

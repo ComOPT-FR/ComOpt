@@ -9,12 +9,19 @@
 cmake_minimum_required(VERSION 3.4.0)
 
 ###################
+# configure vcpkg #
+
+set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "Vcpkg toolchain file")
+
+###################
 
 # Main project name
 
 project(comopt)
 
 ##################
+
+set(CMAKE_CXX_STANDARD 17)
 
 # Building choices
 
