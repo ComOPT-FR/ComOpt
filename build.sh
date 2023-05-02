@@ -2,6 +2,8 @@
 # Number of processors used for compilation
 NBPROCS=1
 
+git submodule update --init --recursive
+
 if [ "$1" == "clean" ]; then
   # Clean the build folder
   rm -rf build

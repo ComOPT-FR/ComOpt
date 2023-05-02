@@ -4,6 +4,9 @@
 
 setlocal EnableDelayedExpansion
 
+:: Git submodule update 
+git submodule update --init --recursive
+
 set CMDLINE=%*
 :: Default values
 set RUN_CMAKE=yes
