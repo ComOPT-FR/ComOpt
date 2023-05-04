@@ -12,16 +12,10 @@ project(designVariables)
 ######################################################################
 
 # Sources
-file(GLOB_RECURSE ${PROJECT_NAME}_SOURCES
-    [a-zA-Z0-9]*.cpp
-    **/*.cpp
-)
+file(GLOB_RECURSE ${PROJECT_NAME}_SOURCES [a-zA-Z0-9]*.cpp)
 
 # Include
-file(GLOB ${PROJECT_NAME}_HEADERS 
-    [a-zA-Z0-9]*.h
-    **/*.h
-)
+file(GLOB_RECURSE ${PROJECT_NAME}_HEADERS [a-zA-Z0-9]*.h)
 
 ####################################################################
 ## Build rules
