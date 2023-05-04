@@ -66,5 +66,6 @@ install(FILES
 # COMOPT INCLUDE FILES AND LIBRARIES
 install_include("${comopt_INCLUDE_DIRS}" "*.h;*.tpp;*.inl")
 copy_and_install_lib("${comopt_LIBRARY_DIRS}" "*.*")
+message(STATUS "comopt_LIBRARY_DIRS: ${comopt_LIBRARY_DIRS}")
 
 
