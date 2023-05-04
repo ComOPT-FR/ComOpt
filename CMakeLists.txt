@@ -25,10 +25,11 @@ set(CMAKE_CXX_STANDARD 17)
 
 # Building choices
 
-option(BUILD_SHARED_LIBS   "Build shared libraries"  false)
+option(BUILD_SHARED_LIBS   "Build shared libraries"  true)
 option(BUILD_TOOLS         "Build tools"             true)
 option(BUILD_TESTS         "Build tests"             true)
 option(BUILD_DOCUMENTATION "Build documentation"     false)
+option(CMAKE_BUILD_TYPE   "Build type"              Release)
 
 ###################
 

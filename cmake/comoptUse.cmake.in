@@ -14,7 +14,4 @@ if(NOT comopt_USE_FILE_INCLUDED)
 
    link_directories(${comopt_LIBRARY_DIR})
 
-
-   set(comopt_DEPENDENCIES ${comopt_DEPENDENCIES})
-
 endif(NOT comopt_USE_FILE_INCLUDED)

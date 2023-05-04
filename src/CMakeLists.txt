@@ -30,7 +30,7 @@ endforeach()
 
 add_library(${PROJECT_NAME} ${LIBRARY_TYPE} ${OBJECTS})
 
-target_link_libraries(${PROJECT_NAME} ${comopt_DEPENDENCIES})
+# target_link_libraries(${PROJECT_NAME} ${comopt_DEPENDENCIES})
 
 ####################################################################
 ## Installation
