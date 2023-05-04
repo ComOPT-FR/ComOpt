@@ -11,7 +11,7 @@ set CMDLINE=%*
 :: Default values
 set RUN_CMAKE=yes
 set RUN_BUILD=yes
-set GENERATOR=VisualStudio2019
+set GENERATOR=VisualStudio2022
 set BUILD_TYPE=Release
 set LIBRARIES_PATHS_FILENAME=
 set BUILD_DIR_NAME=build
