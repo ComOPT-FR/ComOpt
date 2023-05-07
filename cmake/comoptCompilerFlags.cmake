@@ -64,5 +64,23 @@ endif()
 ######################################################################
 
 if(APPLE)
+  add_definitions(-DSTD_IO -DDECO -DAPPLE -DBLASLAPACK_WITHOUT_UNDERSCORE)
 
+  add_compiler_flags(CMAKE_CXX_FLAGS "-std=c++11 -Wall -Wno-deprecated-declarations -stdlib=libc++" "CXX Flags")
+
+  if("${CMAKE_BUILD_TYPE}" STREQUAL "")
+    remove_compiler_flags(CMAKE_CXX_FLAGS "-O2;-DNDEBUG" "CXX Flags" GENERAL)
+    add_compiler_flags(CMAKE_CXX_FLAGS "-O2 -DNDEBUG" "CXX Flags" GENERAL)
+  elseif("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
+    remove_compiler_flags(CMAKE_CXX_FLAGS "-O2" "CXX Flags" GENERAL)
+    remove_compiler_flags(CMAKE_CXX_FLAGS "-O2;-O3;-DNDEBUG" "CXX Flags" RELEASE)
+    add_compiler_flags(CMAKE_CXX_FLAGS "-O2 -DNDEBUG" "CXX Flags" RELEASE)
+  elseif("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+    remove_compiler_flags(CMAKE_CXX_FLAGS "-O2;-DNDEBUG" "CXX Flags" GENERAL)
+    remove_compiler_flags(CMAKE_CXX_FLAGS "-g" "CXX Flags" DEBUG)
+    add_compiler_flags(CMAKE_CXX_FLAGS "-g" "CXX Flags" DEBUG)
+  else()
+    remove_compiler_flags(CMAKE_CXX_FLAGS "-O2;-DNDEBUG" "CXX Flags" GENERAL)
+  endif()
 endif()
+

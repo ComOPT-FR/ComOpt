@@ -13,16 +13,16 @@ project(optimizer)
 ######################################################################
 
 # Sources
-file(GLOB ${PROJECT_NAME}_SOURCES [a-zA-Z0-9]*.cpp)
+file(GLOB_RECURSE ${PROJECT_NAME}_SOURCES [a-zA-Z0-9]*.cpp)
 
 # Include
-file(GLOB ${PROJECT_NAME}_HEADERS [a-zA-Z0-9]*.h)
+file(GLOB_RECURSE ${PROJECT_NAME}_HEADERS [a-zA-Z0-9]*.h)
 
 ####################################################################
 ## Build rules
 ####################################################################
 
-add_library(${PROJECT_NAME} OBJECT
+add_library(${PROJECT_NAME} ${LIBRARY_TYPE}
   ${${PROJECT_NAME}_SOURCES}
   ${${PROJECT_NAME}_HEADERS})
 
@@ -51,7 +51,8 @@ set(${PROJECT_NAME}_HEADERS
 ## Source file layout in development environments like Visual Studio
 ####################################################################
 
-source_group("Header/Source Files" FILES ${${PROJECT_NAME}_SOURCES} ${${PROJECT_NAME}_HEADERS})
+source_group("Header/" FILES ${${PROJECT_NAME}_HEADERS})
+source_group("Sources/" FILES ${${PROJECT_NAME}_SOURCES})
 
 ####################################################################
 ## Installation
