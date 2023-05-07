@@ -4,11 +4,14 @@
 
 setlocal EnableDelayedExpansion
 
+:: Git submodule update 
+git submodule update --init --recursive
+
 set CMDLINE=%*
 :: Default values
 set RUN_CMAKE=yes
 set RUN_BUILD=yes
-set GENERATOR=VisualStudio2015
+set GENERATOR=VisualStudio2022
 set BUILD_TYPE=Release
 set LIBRARIES_PATHS_FILENAME=
 set BUILD_DIR_NAME=build
@@ -82,12 +85,18 @@ if "%GENERATOR%" == "Ninja" (
     set VISUAL_STUDIO_VERSION=17
 ) else (
     if "%GENERATOR%" == "VisualStudio2015" (
-        set GENERATOR=Visual Studio 14 2015 Win64
+        set GENERATOR=Visual Studio 14 2015
         set VISUAL_STUDIO_VERSION=14
     ) else if "%GENERATOR%" == "VisualStudio2017" (
-        set GENERATOR=Visual Studio 15 2017 Win64
+        set GENERATOR=Visual Studio 15 2017
         set VISUAL_STUDIO_VERSION=17
-    ) else (
+	)else if "%GENERATOR%" == "VisualStudio2019" (
+        set GENERATOR=Visual Studio 16 2019
+        set VISUAL_STUDIO_VERSION=19
+	)else if "%GENERATOR%" == "VisualStudio2022" (
+        set GENERATOR=Visual Studio 17 2022
+        set VISUAL_STUDIO_VERSION=22
+    )else (
         call :usage
         exit /b 1
     )
