@@ -29,8 +29,8 @@ add_library(${PROJECT_NAME} ${LIBRARY_TYPE}
 # Add dependencies with other components
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src/section/)
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src/designVariables/)
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src/Error)
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src/utils/)
+message(STATUS "Hazem found: ${CMAKE_SOURCE_DIR/src/designVariables/}")
 
 set_property(TARGET ${PROJECT_NAME} PROPERTY POSITION_INDEPENDENT_CODE 1)
 
