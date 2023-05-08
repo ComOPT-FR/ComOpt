@@ -5,7 +5,7 @@
 #include <vector>
 #include <memory>
 #include <string>
-#include <error.h> //Standard error handling macros
+#include <Error.h> //Standard error handling macros
 
 class ScalarDesignData;
 
