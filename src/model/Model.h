@@ -8,6 +8,7 @@
 #include <utils/Error.h> //Standard error handling macros
 
 
+
 class ApproximationFunction;
 
 struct LaminateData

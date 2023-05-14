@@ -43,5 +43,3 @@ std::abort();
 				<< #x << ") is false: " << msg);                \
 		}                                                       \
    }
-
-#endif
