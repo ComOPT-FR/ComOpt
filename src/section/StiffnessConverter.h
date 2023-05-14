@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <Eigen/Dense>
-#include <Error.h> //Standard error handling macros
+#include <utils/Error.h> //Standard error handling macros
 
 class StiffnessConverter
 {
@@ -22,10 +22,10 @@ public:
 	virtual void ConvertLaminationParametersToStiffness() = 0;
 	virtual void ConvertStiffnessToLaminationParameters() = 0;
 protected:
-	Eigen::Matrix<double, 6, 6> _StiffnessMatrix;
-	Eigen::Matrix<double, Eigen::Dynamic, 1> _LaminationParameters;
 	int _LaminationParametersSize;
 	int State;
+	Eigen::Matrix<double, Eigen::Dynamic, 1> _LaminationParameters;
+	Eigen::Matrix<double, 6, 6> _StiffnessMatrix;
 private:
 	enum StateMasks
 	{

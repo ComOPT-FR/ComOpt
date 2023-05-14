@@ -48,12 +48,15 @@ class Laminate : public LaminateBase<Laminate<Type, isBalanced, isSymmetric, NSU
 {
 public:
 
+
 	void SetLaminateData(int iLaminateNmber, bool iIsVariableThickness)
 	{
-		_DesignVariableNumber = iLaminateNmber;
+		LaminateBase<Laminate<Type, isBalanced, isSymmetric, NSUBLAM>>::_DesignVariableNumber = iLaminateNmber;
 		_IsVariableThickness = iIsVariableThickness;
 	}
-	DesignVariableBase::DesignVariableType GetDesignVariableType() { return LaminateType; }
+	DesignVariableBase::DesignVariableType GetDesignVariableType() { 
+		return LaminateBase<Laminate<Type, isBalanced, isSymmetric, NSUBLAM>>::LaminateType;
+	}
     ~Laminate() {};
 
 private:

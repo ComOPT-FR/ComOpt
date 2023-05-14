@@ -1,12 +1,12 @@
 #ifndef COMOPT_SECTION_H
 #define COMOPT_SECTION_H
 
-#include <DesignVariables.h>
-#include <StiffnessConverter.h>
+#include <designVariables/DesignVariables.h>
+#include <section/StiffnessConverter.h>
 #include <vector>
 #include <memory>
 #include <string>
-#include <Error.h> //Standard error handling macros
+#include <utils/Error.h> //Standard error handling macros
 
 
 class SectionBase

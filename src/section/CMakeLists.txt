@@ -34,9 +34,6 @@ endif()
 
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER src)
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src/designVariables/)
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src/Error)
-
 ## #################################################################
 ## Export header file
 ## #################################################################

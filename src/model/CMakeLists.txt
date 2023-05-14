@@ -25,12 +25,6 @@ file(GLOB_RECURSE ${PROJECT_NAME}_HEADERS [a-zA-Z0-9]*.h)
 add_library(${PROJECT_NAME} ${LIBRARY_TYPE}
   ${${PROJECT_NAME}_SOURCES}
   ${${PROJECT_NAME}_HEADERS})
-  
-# Add dependencies with other components
-
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src/section/)
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src/utils/)
-message(STATUS "Hazem found: ${CMAKE_SOURCE_DIR/src/designVariables/}")
 
 set_property(TARGET ${PROJECT_NAME} PROPERTY POSITION_INDEPENDENT_CODE 1)
 

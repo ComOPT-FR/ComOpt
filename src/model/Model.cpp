@@ -51,7 +51,7 @@ int Model::CreateNewSection(std::string iSectionName, SectionBase::DesignType iD
 {
 
 	COMOPT_ASSERT(!(iDesigType == SectionBase::UnknownDesignType), "Unknown design type has been used",1);
-	bool assert = (iDesigType == SectionBase::ScalarParametersDesign || SectionBase::MixedDesign) & (iSctionData->GetNumberOfScalarVariables() != 0);
+	bool assert = (iDesigType == SectionBase::ScalarParametersDesign || iDesigType == SectionBase::MixedDesign) & (iSctionData->GetNumberOfScalarVariables() != 0);
 	COMOPT_ASSERT(assert, "A scalar parametric design cannot be initialized without any scalar variables", 1);
 
 	// Creation of the new section

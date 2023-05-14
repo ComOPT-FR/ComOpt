@@ -1,11 +1,11 @@
 #ifndef COMOPT_MODEL_H
 #define COMOPT_MODEL_H
 
-#include <Section.h> 
+#include <section/Section.h> 
 #include <vector>
 #include <memory>
 #include <string>
-#include <Error.h> //Standard error handling macros
+#include <utils/Error.h> //Standard error handling macros
 
 
 class ApproximationFunction;
@@ -144,7 +144,7 @@ public:
 
 	// This constructor sets the number of laminates based on the beam profile
 	CompositeBeamSectionData(const std::shared_ptr<SectionProfile>& iSectionProfile)
-		: _SectionProfile(iSectionProfile), SectionData() {}
+		: SectionData(), _SectionProfile(iSectionProfile) {}
 	SectionBase::SectionType GetSectionType() const { return SectionBase::SectionType::CompositeBeam; }
 	int CreateNewLaminateData(LaminateType iSectionLaminateType, MaterialType iMaterialType, bool isVariableThickness);
 
