@@ -44,6 +44,4 @@ std::abort();
 		}                                                       \
    }
 
-#define NULL_SMART static_cast<std::shared_ptr<void>>(NULL)
-
 #endif
