@@ -26,6 +26,9 @@ add_library(${PROJECT_NAME} ${LIBRARY_TYPE}
   ${${PROJECT_NAME}_SOURCES}
   ${${PROJECT_NAME}_HEADERS})
 
+## Link All libraries needed for this library 
+target_link_libraries(${PROJECT_NAME} designVariables utils)
+
 set_property(TARGET ${PROJECT_NAME} PROPERTY POSITION_INDEPENDENT_CODE 1)
 
 if(NOT "${comopt_DEPENDENCIES_3RDPARTY}" STREQUAL "")

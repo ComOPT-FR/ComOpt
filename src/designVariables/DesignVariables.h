@@ -51,11 +51,11 @@ public:
 
 	void SetLaminateData(int iLaminateNmber, bool iIsVariableThickness)
 	{
-		LaminateBase<Laminate<Type, isBalanced, isSymmetric, NSUBLAM>>::_DesignVariableNumber = iLaminateNmber;
+		this->_DesignVariableNumber = iLaminateNmber;
 		_IsVariableThickness = iIsVariableThickness;
 	}
 	DesignVariableBase::DesignVariableType GetDesignVariableType() { 
-		return LaminateBase<Laminate<Type, isBalanced, isSymmetric, NSUBLAM>>::LaminateType;
+		return this->LaminateType;
 	}
     ~Laminate() {};
 
@@ -71,7 +71,7 @@ private:
 public:
 	ScalarVariable(int iScalarNmber, double iScalarValue)
 	{
-		_DesignVariableNumber = iScalarNmber;
+		this->_DesignVariableNumber = iScalarNmber;
 		_Value = iScalarValue;
 	}
 	~ScalarVariable() {};
