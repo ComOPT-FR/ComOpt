@@ -1,11 +1,11 @@
 #ifndef COMOPT_MODEL_H
 #define COMOPT_MODEL_H
 
-#include <Section.h> 
+#include <section/Section.h> 
 #include <vector>
 #include <memory>
 #include <string>
-#include <error.h> //Standard error handling macros
+#include <utils/error.h> //Standard error handling macros
 
 class ScalarDesignData;
 
