@@ -18,6 +18,7 @@ set(${PROJECT_NAME}_LIBRARIES
   optimizer
   section
   utils
+  io
 
 )
 
